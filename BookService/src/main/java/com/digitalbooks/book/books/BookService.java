@@ -8,8 +8,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 import com.digitalbooks.book.constants.ResponseConstants;
-import com.digitalbooks.book.entitys.BaseResponse;
 import com.digitalbooks.book.entitys.BookDetails;
+import com.digitalbooks.book.entitys.ResponseEntity;
 import com.digitalbooks.book.exceptionhandler.BooksExceptionHandler;
 import com.digitalbooks.book.kafka.Producer;
 import com.google.gson.Gson;
@@ -26,7 +26,7 @@ public class BookService {
 	@Autowired
 	private Producer producer;
 
-	public BaseResponse publishBook(BookDetails bookDetails) throws BooksExceptionHandler {
+	public ResponseEntity publishBook(BookDetails bookDetails) throws BooksExceptionHandler {
 		BookDetails details = null;
 		try {
 			details = dao.save(bookDetails);
@@ -34,8 +34,8 @@ public class BookService {
 		} catch (Exception e) {
 			throw new BooksExceptionHandler("Exception occured while inserting data into db");
 		}
-		return details != null ? new BaseResponse(ResponseConstants.SUCCESS, ResponseConstants.SUCCESSMESSAGE)
-				: new BaseResponse(ResponseConstants.FAIL, ResponseConstants.FAILMESSAGE);
+		return details != null ? new ResponseEntity(ResponseConstants.SUCCESS, ResponseConstants.SUCCESSMESSAGE)
+				: new ResponseEntity(ResponseConstants.FAIL, ResponseConstants.FAILMESSAGE);
 	}
 
 	public List<BookDetails> getAllBooksForAuthor(int authorProfileId) throws BooksExceptionHandler {
@@ -46,9 +46,9 @@ public class BookService {
 		}
 	}
 
-	public BaseResponse editOrBlockBook(BookDetails bookDetails) throws BooksExceptionHandler {
+	public ResponseEntity editOrBlockBook(BookDetails bookDetails) throws BooksExceptionHandler {
 		BookDetails response = null;
-		BaseResponse baseResponse = new BaseResponse(ResponseConstants.FAIL, ResponseConstants.FAILMESSAGE);
+		ResponseEntity baseResponse = new ResponseEntity(ResponseConstants.FAIL, ResponseConstants.FAILMESSAGE);
 		try {
 			BookDetails dbDetails = null;
 			java.util.Optional<BookDetails> details = dao.findById(bookDetails.getBookId());

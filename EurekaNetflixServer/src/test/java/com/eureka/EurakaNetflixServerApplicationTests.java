@@ -1,13 +1,13 @@
-package com.eureka;
+//package com.eureka;
 
-import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
+//import org.junit.jupiter.api.Test;
+//import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class EurakaNetflixServerApplicationTests {
+//@SpringBootTest
+//class EurakaNetflixServerApplicationTests {
 
-	@Test
-	void contextLoads() {
-	}
+	//@Test
+	//void contextLoads() {
+	//}
 
-}
+//}

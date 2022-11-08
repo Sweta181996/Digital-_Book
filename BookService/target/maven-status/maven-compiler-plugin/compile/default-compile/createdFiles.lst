@@ -1,0 +1,11 @@
+com\digitalbooks\book\entitys\ResponseEntity.class
+com\digitalbooks\book\books\BookFegin.class
+com\digitalbooks\book\exceptionhandler\BooksExceptionHandler.class
+com\digitalbooks\book\books\BookDao.class
+com\digitalbooks\book\BookServiceApplication.class
+com\digitalbooks\book\constants\ResponseConstants.class
+com\digitalbooks\book\books\BookService.class
+com\digitalbooks\book\books\constants\HttpCalls.class
+com\digitalbooks\book\entitys\BookDetails.class
+com\digitalbooks\book\books\BookController.class
+com\digitalbooks\book\kafka\Producer.class

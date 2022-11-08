@@ -1,0 +1,14 @@
+C:\Users\cogjava3248\Downloads\DigitalBookUsingMicroServices-main (1)\DigitalBookUsingMicroServices-main\ReaderService\src\main\java\com\digitalbooks\reader\exceptionhandler\BooksExceptionHandler.java
+C:\Users\cogjava3248\Downloads\DigitalBookUsingMicroServices-main (1)\DigitalBookUsingMicroServices-main\ReaderService\src\main\java\com\digitalbooks\reader\ReaderServiceApplication.java
+C:\Users\cogjava3248\Downloads\DigitalBookUsingMicroServices-main (1)\DigitalBookUsingMicroServices-main\ReaderService\src\main\java\com\digitalbooks\reader\constants\ForeignUrlsCalling.java
+C:\Users\cogjava3248\Downloads\DigitalBookUsingMicroServices-main (1)\DigitalBookUsingMicroServices-main\ReaderService\src\main\java\com\digitalbooks\reader\purchase\ReaderService.java
+C:\Users\cogjava3248\Downloads\DigitalBookUsingMicroServices-main (1)\DigitalBookUsingMicroServices-main\ReaderService\src\main\java\com\digitalbooks\reader\entitys\BookDetails.java
+C:\Users\cogjava3248\Downloads\DigitalBookUsingMicroServices-main (1)\DigitalBookUsingMicroServices-main\ReaderService\src\main\java\com\digitalbooks\reader\constants\ResponseConstants.java
+C:\Users\cogjava3248\Downloads\DigitalBookUsingMicroServices-main (1)\DigitalBookUsingMicroServices-main\ReaderService\src\main\java\com\digitalbooks\reader\purchase\ReaderController.java
+C:\Users\cogjava3248\Downloads\DigitalBookUsingMicroServices-main (1)\DigitalBookUsingMicroServices-main\ReaderService\src\main\java\com\digitalbooks\reader\purchase\ReaderDao.java
+C:\Users\cogjava3248\Downloads\DigitalBookUsingMicroServices-main (1)\DigitalBookUsingMicroServices-main\ReaderService\src\main\java\com\digitalbooks\reader\constants\HttpCalls.java
+C:\Users\cogjava3248\Downloads\DigitalBookUsingMicroServices-main (1)\DigitalBookUsingMicroServices-main\ReaderService\src\main\java\com\digitalbooks\reader\entitys\ReaderPurchasedBooks.java
+C:\Users\cogjava3248\Downloads\DigitalBookUsingMicroServices-main (1)\DigitalBookUsingMicroServices-main\ReaderService\src\main\java\com\digitalbooks\reader\entitys\BaseResponse.java
+C:\Users\cogjava3248\Downloads\DigitalBookUsingMicroServices-main (1)\DigitalBookUsingMicroServices-main\ReaderService\src\main\java\com\digitalbooks\reader\purchase\BookFegin.java
+C:\Users\cogjava3248\Downloads\DigitalBookUsingMicroServices-main (1)\DigitalBookUsingMicroServices-main\ReaderService\src\main\java\com\digitalbooks\reader\kafka\Consumer.java
+C:\Users\cogjava3248\Downloads\DigitalBookUsingMicroServices-main (1)\DigitalBookUsingMicroServices-main\ReaderService\src\main\java\com\digitalbooks\reader\purchase\EmailService.java

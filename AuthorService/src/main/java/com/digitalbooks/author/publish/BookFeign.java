@@ -9,20 +9,20 @@ import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import com.digitalbooks.author.entitys.BaseResponse;
 import com.digitalbooks.author.entitys.BookDetails;
+import com.digitalbooks.author.entitys.ResponseEntity;
 
 @FeignClient(name = "BOOK-SERVICE", url = "localhost:8090/book")
 public interface BookFeign {
 
 	@PostMapping("/publishbook")
-	public BaseResponse publishBook(@RequestBody BookDetails bookDetails);
+	public ResponseEntity publishBook(@RequestBody BookDetails bookDetails);
 
 	@GetMapping("/getallbooksforauthor")
 	public List<BookDetails> getAllBooksForAuthor(@RequestParam String emailId);
 
 	@PutMapping("/editorblockbook")
-	public BaseResponse editOrBlockBook(@RequestBody BookDetails bookDetails);
+	public ResponseEntity editOrBlockBook(@RequestBody BookDetails bookDetails);
 
 	@GetMapping("/getallbooksforauthor")
 	public List<BookDetails> getAllBooksForAuthor(@RequestParam int authorProfileId);

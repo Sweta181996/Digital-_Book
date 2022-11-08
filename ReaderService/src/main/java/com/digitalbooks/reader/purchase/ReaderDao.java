@@ -9,7 +9,7 @@ import com.digitalbooks.reader.entitys.ReaderPurchasedBooks;
 
 public interface ReaderDao extends JpaRepository<ReaderPurchasedBooks, Long> {
 
-	@Query(value = "SELECT * FROM user_database.user_purchased_books where email_id=:emailId", nativeQuery = true)
+	@Query(value = "SELECT * FROM user_database.user_purchased_books where email_id=:emailId && subscription_status=0", nativeQuery = true)
 	List<ReaderPurchasedBooks> getPurchasedBooks(String emailId);
 
 	@Query(value = "SELECT * FROM user_database.user_purchased_books where payment_id=:paymentId", nativeQuery = true)

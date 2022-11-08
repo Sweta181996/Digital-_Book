@@ -1,0 +1,15 @@
+com\digitalbooks\reader\constants\HttpCalls.class
+com\digitalbooks\reader\constants\ResponseConstants.class
+com\digitalbooks\reader\exceptionhandler\BooksExceptionHandler.class
+com\digitalbooks\reader\purchase\BookFegin.class
+com\digitalbooks\reader\purchase\ReaderDao.class
+com\digitalbooks\reader\purchase\ReaderService.class
+com\digitalbooks\reader\entitys\ReaderPurchasedBooks.class
+com\digitalbooks\reader\purchase\EmailService$1.class
+com\digitalbooks\reader\ReaderServiceApplication.class
+com\digitalbooks\reader\kafka\Consumer.class
+com\digitalbooks\reader\entitys\BookDetails.class
+com\digitalbooks\reader\constants\ForeignUrlsCalling.class
+com\digitalbooks\reader\entitys\BaseResponse.class
+com\digitalbooks\reader\purchase\ReaderController.class
+com\digitalbooks\reader\purchase\EmailService.class

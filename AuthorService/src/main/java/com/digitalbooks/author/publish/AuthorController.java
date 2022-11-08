@@ -5,6 +5,7 @@ import java.util.List;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -15,10 +16,11 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.digitalbooks.author.constants.ResponseConstants;
 import com.digitalbooks.author.entitys.AuthorDetails;
-import com.digitalbooks.author.entitys.BaseResponse;
 import com.digitalbooks.author.entitys.BookDetails;
+import com.digitalbooks.author.entitys.ResponseEntity;
 import com.digitalbooks.author.exceptionhandler.AuthorExceptionHandler;
 
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/author")
 public class AuthorController {
@@ -27,8 +29,8 @@ public class AuthorController {
 	private AuthorService service;
 
 	@PostMapping("/register")
-	public BaseResponse registerAutor(@RequestBody AuthorDetails authorDetails) throws AuthorExceptionHandler {
-		BaseResponse response = new BaseResponse(ResponseConstants.FAIL, ResponseConstants.FAILMESSAGE);
+	public ResponseEntity registerAuthor(@RequestBody AuthorDetails authorDetails) throws AuthorExceptionHandler {
+		ResponseEntity response = new ResponseEntity(ResponseConstants.FAIL, ResponseConstants.FAILMESSAGE);
 		try {
 			response = service.registerAuthor(authorDetails);
 		} catch (Exception e) {
@@ -38,9 +40,9 @@ public class AuthorController {
 	}
 
 	@GetMapping("/login")
-	public BaseResponse loginAuthor(@RequestParam String emailId, @RequestParam String password)
+	public ResponseEntity loginAuthor(@RequestParam String emailId, @RequestParam String password)
 			throws AuthorExceptionHandler {
-		BaseResponse response = new BaseResponse(ResponseConstants.FAIL, ResponseConstants.LOGINFAIL);
+		ResponseEntity response = new ResponseEntity(ResponseConstants.FAIL, ResponseConstants.LOGINFAIL);
 		try {
 			response = service.loginAuthor(emailId, password);
 		} catch (Exception e) {
@@ -50,8 +52,8 @@ public class AuthorController {
 	}
 
 	@PostMapping("/publishbook")
-	public BaseResponse publishBook(@RequestBody BookDetails bookDetails) throws AuthorExceptionHandler {
-		BaseResponse response = new BaseResponse(ResponseConstants.FAIL, ResponseConstants.FAILMESSAGE);
+	public ResponseEntity publishBook(@RequestBody BookDetails bookDetails) throws AuthorExceptionHandler {
+		ResponseEntity response = new ResponseEntity(ResponseConstants.FAIL, ResponseConstants.FAILMESSAGE);
 		try {
 			response = service.publishBook(bookDetails);
 		} catch (Exception e) {
@@ -71,8 +73,8 @@ public class AuthorController {
 	}
 
 	@PutMapping("/editorblockbook")
-	public BaseResponse editOrBlockBook(@RequestBody BookDetails bookDetails) throws AuthorExceptionHandler {
-		BaseResponse response = new BaseResponse(ResponseConstants.FAIL, ResponseConstants.FAILMESSAGE);
+	public ResponseEntity editOrBlockBook(@RequestBody BookDetails bookDetails) throws AuthorExceptionHandler {
+		ResponseEntity response = new ResponseEntity(ResponseConstants.FAIL, ResponseConstants.FAILMESSAGE);
 		try {
 			response = service.editOrBlockBook(bookDetails);
 		} catch (Exception e) {
@@ -81,10 +83,7 @@ public class AuthorController {
 		return response;
 	}
 
-//	@RequestMapping("/test")
-//	public String test() {
-//		return "Working";
-//	}
+
 
 }
 

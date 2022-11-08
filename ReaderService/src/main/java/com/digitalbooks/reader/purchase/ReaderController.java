@@ -1,11 +1,13 @@
 package com.digitalbooks.reader.purchase;
 
 import java.util.ArrayList;
+
 import java.util.List;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -17,6 +19,7 @@ import com.digitalbooks.reader.entitys.BaseResponse;
 import com.digitalbooks.reader.entitys.BookDetails;
 import com.digitalbooks.reader.exceptionhandler.BooksExceptionHandler;
 
+@CrossOrigin("http://localhost:4200")
 @RestController
 @RequestMapping("/reader")
 public class ReaderController {
@@ -27,11 +30,11 @@ public class ReaderController {
 
 	@GetMapping("/getallbooks")
 	public List<BookDetails> getAllBookDetails(@RequestParam(required = false) String title,
-			@RequestParam(required = false) String author, @RequestParam(required = false) String publisher,
+			@RequestParam(required = false) String authorName, @RequestParam(required = false) String publisher,
 			@RequestParam(required = false, defaultValue = "0") long fromDate,
 			@RequestParam(required = false, defaultValue = "0") long toDate) throws BooksExceptionHandler {
 		try {
-			return service.getAllBookDetails(title, author, publisher, fromDate, toDate);
+			return service.getAllBookDetails(title, authorName, publisher, fromDate, toDate);
 
 		} catch (Exception e) {
 			logger.info("Exception occured while fetching book details");
@@ -40,7 +43,7 @@ public class ReaderController {
 
 	}
 
-	@PutMapping("/purchasebook")
+	@GetMapping("/purchasebook")
 	public BaseResponse purchaseBook(@RequestParam int bookId, @RequestParam String name, @RequestParam String emailId)
 			throws BooksExceptionHandler {
 		try {
@@ -71,7 +74,7 @@ public class ReaderController {
 		return new BookDetails();
 	}
 
-	@DeleteMapping("/unsubscribebook")
+	@GetMapping("/unsubscribebook")
 	public BaseResponse unSubscriABook(@RequestParam int bookId, @RequestParam String emailId)
 			throws BooksExceptionHandler {
 		try {

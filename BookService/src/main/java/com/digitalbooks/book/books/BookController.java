@@ -14,20 +14,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.digitalbooks.book.constants.ResponseConstants;
-import com.digitalbooks.book.entitys.BaseResponse;
+
 import com.digitalbooks.book.entitys.BookDetails;
+import com.digitalbooks.book.entitys.ResponseEntity;
 import com.digitalbooks.book.exceptionhandler.BooksExceptionHandler;
 
 @RestController
 @RequestMapping("/book")
 public class BookController {
+	
 	Logger logger = LoggerFactory.getLogger(BookController.class);
+	
 	@Autowired
 	private BookService service;
 
 	@PostMapping("/publishbook")
-	public BaseResponse publishBook(@RequestBody BookDetails bookDetails) {
-		BaseResponse response = new BaseResponse(ResponseConstants.FAIL, ResponseConstants.FAILMESSAGE);
+	public ResponseEntity publishBook(@RequestBody BookDetails bookDetails) {
+		ResponseEntity response = new ResponseEntity(ResponseConstants.FAIL, ResponseConstants.FAILMESSAGE);
 		try {
 			response = service.publishBook(bookDetails);
 		} catch (Exception e) {
@@ -47,8 +50,8 @@ public class BookController {
 	}
 
 	@PostMapping("/editorblockbook")
-	public BaseResponse editOrBlockBook(@RequestBody BookDetails bookDetails) {
-		BaseResponse response = new BaseResponse(ResponseConstants.FAIL, ResponseConstants.FAILMESSAGE);
+	public ResponseEntity editOrBlockBook(@RequestBody BookDetails bookDetails) {
+		ResponseEntity response = new ResponseEntity(ResponseConstants.FAIL, ResponseConstants.FAILMESSAGE);
 		try {
 			response = service.editOrBlockBook(bookDetails);
 		} catch (Exception e) {
@@ -80,11 +83,6 @@ public class BookController {
 		return new ArrayList<BookDetails>();
 	}
 
-//	@RequestMapping("/test")
-//	public String test() {
-////		Optional<BookDetails> list = service.getAllBookesById();
-////		System.out.println(new Gson().toJson(list.get()));
-//		return "Working";
-//	}
+
 
 }

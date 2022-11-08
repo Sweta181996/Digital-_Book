@@ -18,7 +18,8 @@ public interface BookDao extends JpaRepository<BookDetails, Integer> {
 	@Query(value = "SELECT * FROM books_base_data.book_base_data where email_id=:emailId", nativeQuery = true)
 	List<BookDetails> getBooksByEmailId(String emailId);
 
-	@Query(value = "SELECT * FROM books_base_data.book_base_data where active=0 && title like :title% || author_name like :author% || publisher like :publisher% || time_stamp between :fromDate and "
+	@Query(value = "SELECT * FROM books_base_data.book_base_data where active=0 && title like :title% && "
+			+ "author_name like :author% && publisher like :publisher% || category like '%' && time_stamp between :fromDate and "
 			+ ":toDate", nativeQuery = true)
 	List<BookDetails> getBooksBySearch(String title, String author, String publisher, long fromDate, long toDate);
 

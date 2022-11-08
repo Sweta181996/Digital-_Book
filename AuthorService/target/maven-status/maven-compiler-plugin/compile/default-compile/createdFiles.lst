@@ -1,0 +1,17 @@
+com\digitalbooks\author\constants\CallingOtherApis.class
+com\digitalbooks\author\publish\AuthorController.class
+com\digitalbooks\author\entitys\ResponseEntity.class
+com\digitalbooks\author\jwt\api\filter\JwtFilter.class
+com\digitalbooks\author\utils\PasswordEncDec.class
+com\digitalbooks\author\entitys\AuthorDetails.class
+com\digitalbooks\author\jwt\api\service\CustomUserDetailsService.class
+com\digitalbooks\author\AuthorServiceApplication.class
+com\digitalbooks\author\publish\BookFeign.class
+com\digitalbooks\author\constants\ResponseConstants.class
+com\digitalbooks\author\entitys\BookDetails.class
+com\digitalbooks\author\exceptionhandler\AuthorExceptionHandler.class
+com\digitalbooks\author\publish\AuthorDao.class
+com\digitalbooks\author\constants\HttpCalls.class
+com\digitalbooks\author\jwt\api\config\SecurityConfig.class
+com\digitalbooks\author\publish\AuthorService.class
+com\digitalbooks\author\jwt\api\util\JwtUtil.class
